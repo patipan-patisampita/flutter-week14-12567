@@ -9,6 +9,14 @@ class ContactApp extends StatefulWidget {
 
 class _ContactState extends State<ContactApp> {
   String name = "Stateful Widget";
+
+  @override
+  void initState() {
+    super.initState();
+    String title = "Test init state";
+    debugPrint(title);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +32,7 @@ class _ContactState extends State<ContactApp> {
               setState(() {
                 name = value;
               });
+              debugPrint(value);
             },
           ),
           Text(" $name"),
